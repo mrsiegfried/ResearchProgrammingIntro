@@ -8,7 +8,9 @@ import pytest
 def test_inPolygon():
     """Test cases for inPolygon as an axes-aligned box."""
     # Multiple Points
-    box = BoundingPolygon.BoundingPolygon([(0, 0), (0, 1), (1, 1), (1, 0), (0, 0)])
+    box = BoundingPolygon.BoundingPolygon(
+        [(0, 0), (0, 1), (1, 1), (1, 0), (0, 0)]
+    )  # test box for the bounding polygon function we wrote
     points = [(0.5, 0.5), (2, 2), (-4, -4)]
     np.testing.assert_array_equal(box.inPolygon(points), [True, False, False])
 
